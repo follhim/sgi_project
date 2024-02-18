@@ -35,11 +35,18 @@
     "text": "3.2 Removal\n\n\nShow the code\ndata &lt;- data %&gt;%\n  filter(DurClass != \"Extremely High Risk\")\nnice_table(table(data$DurClass))\n\n\nVar1FreqHigh Risk397Low Risk656Moderate Risk382\n\n\nWe can confirm that now Extremely High Risk were removed from the data. We have a total of 1435 respondents retained as of now."
   },
   {
+    "objectID": "Mischievous Responders.html#results-1",
+    "href": "Mischievous Responders.html#results-1",
+    "title": "Mischievous Responders",
+    "section": "4.1 Results",
+    "text": "4.1 Results\n\n\nShow the code\nnice_table(table(data$LongClass))\n\n\nVar1FreqExtremely High Risk3High Risk17Low Risk1,281Moderate Risk134\n\n\nOur results show that only 3 respondents were classified as Extremely High Risk. These respondents will be removed automatically."
+  },
+  {
     "objectID": "Mischievous Responders.html#removal-1",
     "href": "Mischievous Responders.html#removal-1",
     "title": "Mischievous Responders",
-    "section": "4.1 Removal",
-    "text": "4.1 Removal\n\n\nShow the code\ndata &lt;- data %&gt;%\n  filter(LongClass != \"Extremely High Risk\")\nnice_table(table(data$DurClass))\n\n\nVar1FreqHigh Risk395Low Risk655Moderate Risk382\n\n\nWe have a total of 1432 respondents retained as of now."
+    "section": "4.2 Removal",
+    "text": "4.2 Removal\n\n\nShow the code\ndata &lt;- data %&gt;%\n  filter(LongClass != \"Extremely High Risk\")\nnice_table(table(data$DurClass))\n\n\nVar1FreqHigh Risk395Low Risk655Moderate Risk382\n\n\nWe have a total of 1432 respondents retained as of now."
   },
   {
     "objectID": "Mischievous Responders.html#beginning-measure-sexual-identity",
@@ -70,18 +77,18 @@
     "text": "5.4 Results for All Three IRVs\n\n\nShow the code\ndata &lt;- data %&gt;%\n  mutate(IRVClass = case_when(\n    irv_saq_class == \"Straight-lining\" & irv_att_class == \"Straight-lining\" & irv_si_class == \"Straight-lining\" ~ \"High Risk\",\n    (irv_saq_class == \"Straight-lining\") + (irv_att_class == \"Straight-lining\") + (irv_si_class == \"Straight-lining\") == 2 ~ \"Moderate Risk\",\n    (irv_saq_class == \"Straight-lining\") + (irv_att_class == \"Straight-lining\") + (irv_si_class == \"Straight-lining\") == 1 ~ \"Moderate Risk\",\n    TRUE ~ \"Low Risk\"\n  ))\nnice_table(table(data$IRVClass))\n\n\nVar1FreqLow Risk1,408Moderate Risk24\n\n\nOur results show that no respondent was classified as High Risk."
   },
   {
-    "objectID": "Mischievous Responders.html#results-4",
-    "href": "Mischievous Responders.html#results-4",
+    "objectID": "Mischievous Responders.html#results-5",
+    "href": "Mischievous Responders.html#results-5",
     "title": "Mischievous Responders",
     "section": "6.1 Results",
-    "text": "6.1 Results\n\n\nShow the code\nnice_table(table(data$AttClass))\n\n\nVar1FreqLow Risk1,432\n\n\n\n\n\n\n\n\nNote\n\n\n\nAlthough it displays as zero, in the code itself there are no issues.\n\n\nLet’s remove respondents classified as Extremely High Risk."
+    "text": "6.1 Results\n\n\nShow the code\nnice_table(table(data$AttClass))\n\n\nVar1FreqExtremely High Risk10High Risk15Low Risk1,370Moderate Risk37\n\n\nLet’s remove respondents classified as Extremely High Risk."
   },
   {
     "objectID": "Mischievous Responders.html#removal-2",
     "href": "Mischievous Responders.html#removal-2",
     "title": "Mischievous Responders",
     "section": "6.2 Removal",
-    "text": "6.2 Removal\n\n\nShow the code\ndata &lt;- data %&gt;%\n  filter(LongClass != \"Extremely High Risk\")\nnice_table(table(data$AttClass))\n\n\nVar1FreqLow Risk1,432"
+    "text": "6.2 Removal\n\n\nShow the code\ndata &lt;- data %&gt;%\n  filter(LongClass != \"Extremely High Risk\")\nnice_table(table(data$AttClass))\n\n\nVar1FreqExtremely High Risk10High Risk15Low Risk1,370Moderate Risk37"
   },
   {
     "objectID": "Mischievous Responders.html#tier-1-low-risk-data",
